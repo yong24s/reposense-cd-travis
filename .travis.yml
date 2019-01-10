@@ -4,7 +4,7 @@ node_js:
   - 'lts/*'
 
 script:
-  - ./download.sh && ./run.sh && netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p reposense-report
+  - ./download.sh && time ./run.sh && pwd && ls && netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p ./reposense-report
 
 before_install:
   - npm install -g netlify-cli
