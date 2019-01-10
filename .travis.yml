@@ -1,16 +1,12 @@
-language: minimal
+language: node_js
 
-os: linux
+node_js: 
+  - 'lts/*'
 
 script:
-  - ./download.sh
-  - ./run.sh
-  - netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./reposense-report
-
-addons:
-  apt:
-    packages:
-      - npm
+  - ./download.sh && ./run.sh && netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p reposense-report
 
 before_install:
-  - npm install netlify-cli -g
+  - npm install -g netlify-cli
+
+cache: npm
