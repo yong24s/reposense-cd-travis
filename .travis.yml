@@ -1,0 +1,16 @@
+language: minimal
+
+os: linux
+
+script:
+  - ./download.sh
+  - ./run.sh
+  - netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./reposense-report
+
+addons:
+  apt:
+    packages:
+      - npm
+
+before_install:
+  - npm install netlify-cli -g
