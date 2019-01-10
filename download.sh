@@ -8,5 +8,5 @@ URL=$(curl -s https://api.github.com/repos/reposense/RepoSense/releases/latest \
 # If URL does not contain the file, the api request may be rate controlled
 # So fallback and use existing jar file
 if [[ $URL == *"RepoSense.jar"* ]]; then
-  wget $URL
+  wget $URL -O "RepoSense.jar"
 fi
