@@ -4,7 +4,7 @@ node_js:
   - 'lts/*'
 
 script:
-  - ./download.sh
+  #- ./download.sh
   - time ./run.sh
   - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir ./reposense-report
 
